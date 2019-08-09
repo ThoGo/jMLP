@@ -25,6 +25,21 @@ public class Neuron
 			inputWeights.add( rand.nextFloat() );
 		}
 	}
+	
+	public Float feedForward(List<Float> inputs)
+	{
+		//XXX Aussteigen, wenn die Dimensionen nicht stimmen
+		
+		Float output = 0F;
+		
+		for( int i=0;  i<inputWeights.size(); i++ )
+		{
+			//entspricht einer linearen Transferfunktion
+			output += inputWeights.get(i) * inputs.get(i);
+		}
+		
+		return output;
+	}
 
 
 //	public void adapt()
@@ -52,5 +67,12 @@ public class Neuron
 		// weights sind aber auf jeden Fall initialisiert
 		return this.inputWeights.size();
 	}
+
+	public List<Float> getInputWeights()
+	{
+		return inputWeights;
+	}
+	
+	
 
 }
