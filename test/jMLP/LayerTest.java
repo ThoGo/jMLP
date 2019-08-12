@@ -29,6 +29,12 @@ class LayerTest
 		System.out.println(outputs);
 		assertEquals(10, outputs.size());
 		
+		layer = new Layer(10, 5);
+		inputs = Arrays.asList(1F, 1F, 1F, 1F, 1F);
+		outputs = layer.feedForward(inputs);
+		System.out.println(outputs);
+		assertEquals(10, outputs.size());
+		
 		layer = new Layer(10,10);
 		inputs = Arrays.asList(1F, 1F, 1F, 1F, 1F, 1F, 1F, 1F, 1F, 1F);
 		outputs = layer.feedForward(inputs);
